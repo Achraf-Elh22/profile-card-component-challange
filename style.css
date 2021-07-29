@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+:root {
+  --Dark-cyan: hsl(185, 75%, 39%);
+  --Very-dark-desaturated-blue: hsl(229, 23%, 23%);
+  --Dark-grayish-blue: hsl(227, 10%, 46%);
+  --Dark-gray: hsl(0, 0%, 59%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Kumbh Sans";
+  font-size: 18px;
+  line-height: 1.6;
+  font-weight: 400;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+
+  background-color: var(--Dark-cyan);
+
+  /*centering profile div */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Bg patterns */
+body::before {
+  content: "";
+  position: absolute;
+  top: -500px;
+  left: -800.5px;
+  width: 978px;
+  height: 978px;
+  background: url("./images/bg-pattern-top.svg");
+}
+body::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+  height: 400px;
+  background: url("./images/bg-pattern-bottom.svg");
+}
+
+.primary-color {
+  color: var(--Very-dark-desaturated-blue);
+  font-weight: 700;
+}
+
+.secondary-color {
+  color: var(--Dark-gray);
+  font-weight: 400;
+}
+
+/* Profile */
+.profile {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  z-index: 10;
+  border-radius: 15px;
+}
+
+.profile--info {
+  text-align: center;
+  padding: 2em;
+  position: relative;
+  flex: 1 1 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile--info img {
+  border-radius: 50%;
+  border: 5px #fff solid;
+  padding: 0;
+  margin-bottom: 0.75em;
+}
+
+.profile--info::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 40%;
+  border-radius: 15px 15px 0 0;
+  background: url("./images/bg-pattern-card.svg");
+}
+
+.profile--social ul {
+  list-style: none;
+  display: flex;
+  text-align: center;
+  padding: 1em;
+  gap: 10px;
+}
+
+.profile--social .secondary-color {
+  font-size: 0.8em;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media screen and (min-width: 900px) {
+  body::before {
+    top: -500px;
+    left: -500px;
+  }
+  body::after {
+    width: 700px;
+    height: 300px;
+  }
+}
